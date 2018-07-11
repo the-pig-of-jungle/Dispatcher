@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,  initial-scale=1"/>
+    <title>
+
+    </title>
+
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <style type="text/css">
+
+    </style>
+
+    <script type="text/javascript">
+    function refresh(jsonStr){
+    var bean = JSON.parse(jsonStr);
+     document.getElementById("total").innerHTML = '￥' + bean.mTotal;
+   $(function () {
+    $('#container').highcharts({
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false
+        },
+        title: {
+            text: ''
+        },
+        colors:[
+            '#0bbda2',
+            '#fa6a5f'
+
+        ],
+        tooltip: {
+            headerFormat: '',
+            pointFormat: '{point.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: false,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '￥{point.y:.2f}<br/><br/>  <b>{point.name}</b>',
+                    style: {
+                        color: '#666666'
+                    }
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: '',
+            data: [
+                ['线下收款',   bean.mOffline],
+                ['线上收款',   bean.mOnline],
+            ]
+        }]
+    });
+});
+
+}
+    </script>
+</head>
+<body style="background-color: #FFFFFF;">
+
+<br/>
+&nbsp;&nbsp;<b>总收款金额<div style="float:right" id="total">￥0</div></b>
+<hr color="#e5e5e5" size="0.5dp"/>
+<div id="container" style="min-width:320px;min-height: 300px;">
+
+</div>
+
+</body>
+<script src="highcharts.js"></script>
+<script src="highcharts-3d.js"></script>
+
+</html>
