@@ -69,10 +69,10 @@ dependencies {
     implementation 'com.github.rahatarmanahmed:circularprogressview:2.5.0'
     implementation 'org.greenrobot:eventbus:3.0.0'
     implementation 'com.android.support:percent:26.0.1'
-    compile('com.github.SuperKotlin:PictureViewer:2.0.1') {
+    implementation('com.github.SuperKotlin:PictureViewer:2.0.1') {
         exclude group: 'com.android.support'
     }
-    compile('com.github.the-pig-of-jungle:SmartShow:v1.0.4') {
+    implementation('com.github.the-pig-of-jungle:SmartShow:v1.0.4') {
 
         exclude group: 'com.android.support'
     }
