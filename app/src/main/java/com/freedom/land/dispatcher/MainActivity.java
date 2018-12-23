@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         PermissionManager.requestPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE, 1, new PermissionManager.PermissionCallback() {
             @Override
             public void onAccepted() {
-
+                //dev
             }
 
             @Override
